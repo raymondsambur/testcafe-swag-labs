@@ -1,4 +1,4 @@
-import { Selector } from 'testcafe'
+import { Selector, t } from 'testcafe'
 
 class LoginPage {
     constructor() {
@@ -9,6 +9,13 @@ class LoginPage {
 
         this.errorMessage = Selector('h3').withAttribute('data-test', 'error')
         this.buttonCloseErrorMessage = Selector('.error-button')
+    }
+
+    async loginToApp(username, password) {
+        await t
+            .typeText(this.inputUsername, username)
+            .typeText(this.inputPassword, password)
+            .click(this.buttonLogin)
     }
 }
 export default LoginPage
