@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "dotenv": "^16.0.1",
     "testcafe": "^1.19.0"
   }
 }
