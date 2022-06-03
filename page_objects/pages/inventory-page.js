@@ -3,6 +3,7 @@ import { Selector } from 'testcafe'
 class InventoryPage {
     constructor() {
         this.appLogo = Selector('.app_logo')
+        this.shoppingCartBadge = Selector('.shopping-cart-badge')
 
         //Side Menus
         this.buttonBurgerMenu = Selector('#react-burger-menu-btn')
