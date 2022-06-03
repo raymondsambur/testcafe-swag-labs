@@ -8,6 +8,12 @@ createTestCafe('localhost', 1337, 1338)
         return runner
             .src(['./tests'])
             .browsers(['chrome:headless'])
+            .filter((testName, fixtureName, fixturePath, testMeta, fixtureMeta) => {
+                return testMeta.heavyFlow == true //true or false
+                    && testMeta.testCaseType == 'positive' //positive or negative
+                    && testMeta.regression == true //true or false
+                    && testMeta.isDeprecated == false //true or false
+            })
             .run({
                 skipJsErrors: true,
                 quarantineMode: { successThreshold: 1, attemptLimit: 3 },
