@@ -2,7 +2,10 @@ import { Selector, t } from 'testcafe'
 
 class LoginPage {
     constructor() {
-        this.loginLogo = Selector('.login_logo')
+        this.loginPageTitle = Selector('.login_logo')
+        this.loginLogo = Selector('.bot_column')
+        this.placeholderUsername = Selector('#user-name').withAttribute('placeholder', 'Username')
+        this.placeholderPassword = Selector('#password').withAttribute('placeholder', 'Password')
         this.inputUsername = Selector('#user-name')
         this.inputPassword = Selector('#password')
         this.buttonLogin = Selector('#login-button')
