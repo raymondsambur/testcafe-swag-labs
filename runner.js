@@ -8,6 +8,7 @@ createTestCafe('localhost', 1337, 1338)
         return runner
             .src(['./tests'])
             .browsers(['chrome:headless'])
+            .concurrency(2)
             .filter((testName, fixtureName, fixturePath, testMeta, fixtureMeta) => {
                 return testMeta.heavyFlow == true //true or false
                     && testMeta.testCaseType == 'positive' //positive or negative
